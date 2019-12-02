@@ -77,7 +77,17 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("HomePage"),
       ),
-      body: SafeArea(child: bodyWidget),
+      body: SafeArea(
+          child: AnimatedSwitcher(
+        child: bodyWidget,
+        transitionBuilder: (widget, animation) {
+          return ScaleTransition(
+            scale: animation,
+            child: widget,
+          );
+        },
+        duration: Duration(milliseconds: 500),
+      )),
     );
   }
 }
