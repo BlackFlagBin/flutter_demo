@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/bean/base_data_entity.dart';
 
@@ -10,7 +11,12 @@ class ItemView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 5, left: 5, right: 5),
-      child: Card(
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            boxShadow: [BoxShadow(color: Colors.blueAccent, offset: Offset(0, 1), blurRadius: 2)]),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
